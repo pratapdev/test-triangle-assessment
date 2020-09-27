@@ -1,0 +1,142 @@
+<div class="container">
+  <div class="full-page">
+    <mat-card class="login-card">
+      <mat-card-title>
+        Create User
+    </mat-card-title>
+    <mat-card-content>
+            <div style="margin-left: 300; margin-top: 30px;">
+                  <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
+                    <div class="form-group row">
+                    <label  class="col-sm-4 col-form-label">User Name:</label>
+                    <div class="col-sm-4">
+                        <input type="text"  class="form-control" placeholder="Enter User Name"
+                         formControlName="username"  name="username">
+                        <div *ngIf="username.invalid && username.touched || (username.invalid && submitted)" style="color: red;  ">
+                          <small *ngIf="username.errors?.required">User Name is required.</small>
+
+                        </div>
+                    </div>
+                    </div>
+                    <div class="form-group row">
+                    <label  class="col-sm-4 col-form-label">Email:</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" placeholder="Enter Email"
+                         formControlName="email">
+                        <div *ngIf="email.invalid && email.touched  || (email.invalid && submitted)" style="color: red;  ">
+                          <small *ngIf="email.errors?.required">Email is required.</small>
+                          <small *ngIf="email.errors?.pattern">Enter a valid email</small>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="form-group row">
+                      <label  class="col-sm-4 col-form-label">Password</label>
+                      <div class="col-sm-4">
+                          <input type="password" class="form-control"  name="password" placeholder="Enter Password here"
+                           formControlName="password">
+                          <div *ngIf="password.invalid && password.touched || (password.invalid && submitted)" style="color: red;  ">
+                            <small *ngIf="password.errors?.required ">Password is required.</small>
+                            <small *ngIf="password.errors?.minlength">minimum six characters</small>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label  class="col-sm-4 col-form-label">Confirm Password:</label>
+                      <div class="col-sm-4">
+                          <input type="password" class="form-control" name="confirmpassword" placeholder="Confirm Password"
+                           formControlName="confirmpassword">
+                           <div *ngIf="confirmpassword.invalid && confirmpassword.touched  || (confirmpassword.invalid && submitted)" style="color: red;  ">
+                            <small *ngIf="confirmpassword.errors?.required">Confirm Password is required.</small>
+                            <small *ngIf="confirmpassword.errors?.minlength">Confirm Password is required.</small>
+                            <small *ngIf="confirmpassword.errors?.confirmPasswordValidator">Passsword and Confirm Password didn't match.</small>
+                          </div>
+                      </div>
+                    </div>
+                      <div class="form-group row">
+                        <label  class="col-sm-4 col-form-label">Display Name:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" name="displayName" placeholder="Enter Display Name"
+                            formControlName="displayName">
+                            <div *ngIf="displayName.invalid && displayName.touched || (displayName.invalid && submitted)" style="color: red;  ">
+                              <small *ngIf="displayName.errors?.required ">DisplayName is required.</small>
+                              <small *ngIf="displayName.errors?.minlength">minimum three characters</small>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Name:</label>
+                            <div class="col-md-4">
+                              <input type="text" class="form-control" name="firstName" placeholder="First Name"
+                                  formControlName="firstName">
+                                  <div *ngIf="firstName.invalid && firstName.touched || (firstName.invalid && submitted)" style="color: red;  ">
+                                    <small *ngIf="firstName.errors?.required">First Name is required.</small>
+                                  </div>
+                            </div>
+                            <div class="col-md-4">
+                              <input type="text" class="form-control"  name="lastName" placeholder="Last Name" formControlName="lastName"
+                                >
+                                <div *ngIf="lastName.invalid && lastName.touched || (lastName.invalid && submitted)" style="color: red;  ">
+                                  <small *ngIf="lastName.errors?.required">Last Name is required.</small>
+                                </div>
+                            </div>
+                      </div>
+                      <div class="form-group row">
+                        <label  class="col-sm-4 col-form-label">Nickname:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control"  name="nickName" placeholder="Enter Nick Name"
+                            formControlName="nickName">
+
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label  class="col-sm-4 col-form-label">Website:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" name="website" placeholder="Enter Website"
+                            formControlName="website">
+
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label  class="col-sm-4 col-form-label">Bio:</label>
+                        <div class="col-sm-8">
+                            <textarea class="form-control"  name="bio" placeholder="Enter Bio "
+                            formControlName="bio"></textarea>
+
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label  class="col-sm-4 col-form-label">Jabber:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" name="jabber" placeholder="Enter Jabber"
+                            formControlName="jabber">
+
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">AOL IM:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" name="password" placeholder="Enter AOL IM"
+                            formControlName="aolIm">
+
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label  class="col-sm-4 col-form-label">Yahoo IM:</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" name="password" placeholder="Enter Yahoo IM"
+                            formControlName="yahooIm">
+
+                        </div>
+                      </div>
+                    <div class="form-group row">
+                        <div class="offset-sm-5" style="float: right;">
+                            <!-- <a type="button" routerLink="/dashboard"   class="btn btn-primary" >Create User!</a> -->
+                            <button mat-raised-button type="submit"  color="primary" class="login-btn">Create</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+    </mat-card-content>
+    </mat-card>
+  </div>
+  </div>

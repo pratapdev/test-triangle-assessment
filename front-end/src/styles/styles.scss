@@ -1,0 +1,17 @@
+@import 'material';
+@import 'main';
+@import 'utils';
+@import 'responsive';
+
+.mat-toolbar.mat-primary {
+  background: #2A3A4A;
+  color: #fff;
+}
+
+.mat-list-item-content{
+  color: white;
+}
+
+// a.mat-list-item.active {
+//   background-color: #3DBCF3;
+// }

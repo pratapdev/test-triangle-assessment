@@ -1,0 +1,46 @@
+html, body, .grid-container { height: 100%; margin: 0; }
+
+
+.grid-container {
+  margin-left: 60px;
+  margin-right: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 29px 15px;
+  grid-template-areas:
+    "area-1 area-1 area-1 area-2"
+    "area3 area3 area3 area4"
+    "area3 area3 area3 area5";
+}
+
+.area-1 { grid-area: area-1; }
+
+.area-2 { grid-area: area-2; }
+
+.area3 { grid-area: area3; }
+
+.area4 { grid-area: area4; }
+
+.area5 { grid-area: area5; }
+
+.dash-body{
+  height: 100%;
+    background-color: #ECECEC;
+}
+/* For presentation only, no need to copy the code below */
+.grid-container * {
+  border: 2px solid #dac8c8;
+  position: relative;
+  /* border: 1px solid; */
+  padding: 10px;
+  box-shadow: 1px 1px #888888;
+  background-color: white;
+}
+
+.grid-container *:after {
+  //content:attr(class);
+  position: absolute;
+  top: 0;
+  left: 0;
+}

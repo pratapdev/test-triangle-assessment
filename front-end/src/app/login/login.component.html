@@ -1,0 +1,50 @@
+<div class="login-page">
+    <div class="content">
+        <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)" fxflex="" >
+            <div class="text-center">
+                <h2 class="app-name">Welcome Back</h2>
+            </div>
+            <div fxflex="" fxlayout="row" fxlayout.lt-md="column">
+                <div fxFlexFill>
+                    <mat-form-field class="w-100">
+                        <input matInput placeholder="Username" formControlName="username" required>
+                        <mat-error *ngIf="loginForm.controls['username'].invalid">
+                          {{getError('username')}}
+                        </mat-error>
+                        <!-- <mat-error *ngIf="loginForm.controls['username'].errors?.pattern">
+                          {{getError('username-pattern')}}
+                        </mat-error> -->
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxflex="" fxLayout="row" fxLayout.lt-md="column">
+                <div fxFlexFill>
+                    <mat-form-field class="w-100">
+                        <input matInput type="password" placeholder="Password" formControlName="password" required>
+                        <mat-error *ngIf="!loginForm.controls['password'].valid">
+                          {{getError('pass')}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxflex="" fxLayout="row" fxLayout.lt-md="column" style="margin: 20px 0 30px 0">
+                <div fxFlex>
+                    <mat-checkbox color="primary">Remember Me</mat-checkbox>
+                </div>
+                <div fxflex="" fxLayoutAlign="end">
+                    <a href="javascript:void(0)">Forget Password</a>
+                </div>
+            </div>
+            <div fxflex="" fxLayout="row" fxLayout.lt-md="column">
+                <div fxFlexFill>
+                    <button mat-raised-button type="submit"  color="primary" class="login-btn">Login</button>
+                </div>
+            </div>
+            <div fxflex="" fxLayout="row" fxLayout.lt-md="column" style="margin: 20px 0 30px 0">
+            <div fxFlexFill>
+              <label>Don't you have an account ?</label>  <a [routerLink]="['/signup']">Signup</a>
+          </div>
+        </div>
+        </form>
+    </div>
+</div>
