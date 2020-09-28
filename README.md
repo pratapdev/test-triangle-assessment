@@ -1,6 +1,7 @@
 # Steps to run the application
 
-After cloning the project
+# After cloning the project
+
 Pre-requisites:
 1) Nodejs
 2) MongoDb
